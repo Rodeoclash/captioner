@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  app: &app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    user: "1000"
+    volumes:
+      - ./app:/usr/src/app
+      - ./passwd:/etc/passwd
+      - home:/home/server
+
+volumes:
+  home:
