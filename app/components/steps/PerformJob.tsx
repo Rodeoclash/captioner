@@ -48,8 +48,6 @@ export default function PerformJob({ job, onContinue }: PropsType) {
         return;
       }
 
-      console.log("found result", result);
-
       setUtterances((utt: VoskResult[]) => [...utt, result]);
     });
 
@@ -92,6 +90,16 @@ export default function PerformJob({ job, onContinue }: PropsType) {
     };
   }, [job]);
 
+  const renderedUtterances = utterances.map((utterance) => {
+    const start = utterance.result[0].start;
+
+    return (
+      <Text mb={4} borderLeft="4px" borderColor="gray.200" pl={4} key={start}>
+        <Code>{Math.floor(start)}s</Code>: {utterance.text}
+      </Text>
+    );
+  });
+
   return (
     <>
       <Heading fontSize="2xl" as="h2" mb="4">
@@ -116,12 +124,10 @@ export default function PerformJob({ job, onContinue }: PropsType) {
           )}
           {utterances.length > 0 && (
             <>
-              <Text mb={4} borderLeft="4px" borderColor="gray.200" pl={4}>
-                {utterances[utterances.length - 1].text}
-              </Text>
-              <Text fontSize={"sm"}>
+              <Text fontSize={"sm"} mb={8}>
                 <strong>Found {utterances.length} snippets</strong>
               </Text>
+              {renderedUtterances.slice(-5)}
             </>
           )}
         </Container>

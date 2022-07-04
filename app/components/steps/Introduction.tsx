@@ -11,12 +11,13 @@ export default function Instructions({ onContinue }: PropsType) {
         Introduction
       </Heading>
       <Text mb={4}>
-        Captiononeer is a tool to automatically produce subtitle files (
-        <Code>.srt</Code>) files from video or audio files.
+        Captioner is a small application to test the automatic generation of
+        subtitles on video.
       </Text>
       <Text mb={8}>
-        Subtitles are created by running a machine learning model (Vosk) over
-        the audio and are produced locally. No data ever leaves your computer.
+        Subtitles are created by running a machine learning model (Vosk) via
+        WASM over the audio and are produced locally. No data ever leaves your
+        computer.
       </Text>
       <Box>
         <Button onClick={() => onContinue()}>Start</Button>

@@ -113,7 +113,7 @@ export default function AddMedia({ onContinue }: PropsType) {
             onChange={(event) => handleMediaSelected(event)}
           />
           <FormHelperText>
-            Most recent audio and video formats are supported
+            Any browser supported video format (MP4, MKV or WebM)
           </FormHelperText>
         </FormControl>
         <Button disabled={media === null} type="submit">
