@@ -97,7 +97,7 @@ export default function AddMedia({ onContinue }: PropsType) {
             }
             value={language}
           >
-            <Stack direction="row">
+            <Stack>
               <Radio value="english">English</Radio>
               <Radio value="japanese">Japanese</Radio>
             </Stack>
