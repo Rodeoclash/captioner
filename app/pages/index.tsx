@@ -60,7 +60,7 @@ const Home: NextPage = () => {
       >
         <Box maxWidth="1200px" width="100%">
           <Heading as="h1" fontSize="2xl">
-            Captioning test
+            Captioner test
           </Heading>
         </Box>
       </Flex>
